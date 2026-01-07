@@ -3,7 +3,7 @@ header {
     width: 100%;
     background-color: #ffffff;
     color: white;
-    padding: 20px 100px;
+    padding: 20px 50px;
     position: sticky;
     top: 0;
     z-index: 999;
@@ -11,7 +11,7 @@ header {
 
 nav {
     width: 100%;
-    max-width: 1300px;
+    max-width: 1500px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -32,7 +32,7 @@ nav {
 }
 
 .nav-link.active {
-    color: #2A348D !important;
+    color: #015931 !important;
     font-weight: 600;
 }
 
@@ -44,7 +44,7 @@ nav {
 }
 
 .logo1 {
-    width: 100px;
+    width: 150px;
 }
 
 .menu-toggle {
@@ -188,7 +188,7 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: #2A348D;
+    background-color: #363636;
     color: #ffffff;
     text-align: center;
     padding: 100px;
@@ -196,7 +196,7 @@ footer {
 
 .footer-content {
     width: 100%;
-    max-width: 1300px;
+    max-width: 1500px;
     display: flex;
     flex-direction: row;
     gap: 100px;
@@ -249,20 +249,20 @@ footer {
 }
 
 .footer-desc p {
-    font-size: 20px;
+    font-size: 15px;
     color: #ffffff;
 }
 
 .footer-bottom {
-    background-color: #ffffff;
-    color: #2A348D;
+    background-color: #015931;
+    color: #ffffff;
     text-align: center;
     padding: 15px;
 }
 
 .footer-bottom a {
     font-weight: 600;
-    color: #2A348D;
+    color: #ffffff;
     text-decoration: none;
 }
 

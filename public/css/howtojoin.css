@@ -14,7 +14,7 @@
 
 .hero-howtojoin {
     width: 100%;
-    max-width: 1300px;
+    max-width: 1500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -57,7 +57,7 @@
 
 .howtojoin-cards {
     width: 100%;
-    max-width: 1300px;
+    max-width: 1500px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -148,7 +148,7 @@
 
 .howtojoin-table {
     width: 100%;
-    max-width: 1300px;
+    max-width: 1500px;
 }
 
 .table-wrapper {

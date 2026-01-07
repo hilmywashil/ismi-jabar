@@ -14,7 +14,7 @@
 
 .hero-visi-misi {
     width: 100%;
-    max-width: 1300px;
+    max-width: 1500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -65,7 +65,7 @@
 
 .info-visi-misi {
     width: 100%;
-    max-width: 1300px;
+    max-width: 1500px;
     display: flex;
     flex-direction: row;
     gap: 50px;

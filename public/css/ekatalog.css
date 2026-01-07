@@ -6,7 +6,7 @@
 }
 
 .e-katalog-content {
-    max-width: 1300px;
+    max-width: 1500px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
@@ -59,7 +59,7 @@
 
 .search-katalog {
     width: 100%;
-    max-width: 1300px;
+    max-width: 1500px;
     display: flex;
     flex-direction: column;
 }
@@ -118,7 +118,7 @@
 
 .detail-katalog-text {
     width: 100%;
-    max-width: 1300px;
+    max-width: 1500px;
 }
 
 .detail-katalog-text p {
@@ -136,7 +136,7 @@
 
 .detail-katalog-images {
     width: 100%;
-    max-width: 1300px;
+    max-width: 1500px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
@@ -159,7 +159,7 @@
 
 .detail-katalog-contact-map {
     width: 100%;
-    max-width: 1300px;
+    max-width: 1500px;
     display: flex;
     flex-direction: row;
 }

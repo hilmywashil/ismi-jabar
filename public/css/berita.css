@@ -1,15 +1,15 @@
 .beritas {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 100px;
-
 }
 
 .berita-content {
     width: 100%;
-    max-width: 1300px;
+    max-width: 1500px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
@@ -30,7 +30,7 @@
 
 .detail-berita {
     width: 100%;
-    max-width: 1300px;
+    max-width: 1500px;
     display: flex;
     flex-direction: row;
     gap: 50px;
@@ -95,7 +95,7 @@
 
     .berita-content {
         width: 100%;
-        max-width: 1300px;
+        max-width: 1500px;
         display: flex;
         flex-direction: column;
         gap: 25px;

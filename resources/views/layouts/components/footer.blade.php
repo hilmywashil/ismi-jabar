@@ -2,10 +2,10 @@
     <div class="footer-content">
         <div class="footer-item">
             <div class="footer-logo">
-                <img class="footer-logo2" src="{{ asset('images/asita-logo.png') }}" alt="Logo 2">
+                <img class="footer-logo2" src="{{ asset('images/ismi-logo.png') }}" alt="Logo 2">
             </div>
             <div class="footer-desc">
-                <p>ASITA West Java Chapter</p>
+                <p>ISMI Ikatan Saudagar Muslim se-Indonesia (ISMI) adalah institusi per-kumpulan Saudagar Muslim Seluruh Indonesia</p>
             </div>
         </div>
         <div class="footer-item">

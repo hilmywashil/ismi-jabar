@@ -5,7 +5,7 @@
     <div class="sidebar-header">
         <div class="brand">
             <div class="brand-logo">
-                <img src="{{ asset('images/asita-logo.png') }}" alt="ASITA Logo" width="75" height="75" style="object-fit: contain;">
+                <img src="{{ asset('images/ismi-logo.png') }}" alt="ASITA Logo" width="75" height="75" style="object-fit: contain;">
             </div>
             <div class="brand-text" style="margin-left: 20px;">
                 <div class="brand-title">ASITA</div>

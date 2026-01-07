@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         // Ambil data katalog aktif (maksimal 10)
         $katalogs = Katalog::where('is_active', true)
@@ -64,12 +64,24 @@ class HomeController extends Controller
             ->take(8)
             ->get();
 
+        $search = $request->get('search');
+
+        $beritas = Berita::active()
+            ->latestPublish()
+            ->when($search, function ($q) use ($search) {
+                $q->where(function ($query) use ($search) {
+                    $query->where('judul', 'like', '%' . $search . '%')
+                        ->orWhere('konten', 'like', '%' . $search . '%');
+                });
+            })
+            ->paginate(12);
         // Return view dengan data
         return view('pages.home', compact(
-            'katalogs', 
-            'totalKatalog', 
-            'misi', 
-            'totalAnggota', 
+            'katalogs',
+            'totalKatalog',
+            'beritas',
+            'misi',
+            'totalAnggota',
             'anggotaList',
             'totalUmkm',
             'kegiatanBerita',

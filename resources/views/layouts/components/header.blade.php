@@ -5,7 +5,7 @@
     <header>
         <nav>
             <div class="logo">
-                <img class="logo1" src="{{ asset('images/asita-logo.png') }}" alt="Logo 1">
+                <img class="logo1" src="{{ asset('images/ismi-logo.png') }}" alt="Logo 1">
             </div>
 
             <div class="menu-toggle" id="menu-toggle">
