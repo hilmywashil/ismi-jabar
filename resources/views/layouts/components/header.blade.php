@@ -19,22 +19,26 @@
                 <div class="dropdown">
                     <a href="javascript:void(0)"
                         class="nav-link dropdown-toggle {{ Request::routeIs('about', 'vision-mission') ? 'active' : '' }}">
-                        About ASITA <i class="fa fa-caret-down"></i>
+                        Profile <i class="fa fa-caret-down"></i>
                     </a>
 
                     <div class="dropdown-menu">
                         <a href="{{ route('about') }}" class="{{ Request::routeIs('about') ? 'active' : '' }}">
-                            ASITA Profile
+                            Sejarah
                         </a>
                         <a href="{{ route('vision-mission') }}"
                             class="{{ Request::routeIs('vision-mission') ? 'active' : '' }}">
-                            Vision & Mission
+                            Visi Misi
+                        </a>
+                        <a href="{{ route('vision-mission') }}"
+                            class="{{ Request::routeIs('vision-mission') ? 'active' : '' }}">
+                            Peranan ISMI
                         </a>
                     </div>
                 </div>
-                <a href="{{ route('how-to-join') }}"
-                    class="nav-link {{ Request::routeIs('how-to-join') ? 'active' : '' }}">
-                    How to Join
+                <a href="{{ route('berita') }}"
+                    class="nav-link {{ Request::routeIs('berita') ? 'active' : '' }}">
+                    Berita
                 </a>
                 <div class="dropdown">
                     <a href="javascript:void(0)"
@@ -72,8 +76,8 @@
                             <a href="{{ route('profile-anggota') }}" class="btn-transparent">Profile Anggota</a>
                         @else
                             {{-- Jika belum login (Guest) --}}
-                            <a href="{{ route('admin.login') }}" class="btn">Login</a>
-                            <a href="{{ route('join-us') }}" class="btn-transparent">Join Us</a>
+                            <a href="{{ route('admin.login') }}" class="login-btn">Masuk</a>
+                            <a href="{{ route('join-us') }}" class="btn-transparent">Gabung Member</a>
                         @endauth
                     @endauth
                 </div>
@@ -89,8 +93,8 @@
                         <a href="{{ route('profile-anggota') }}" class="btn-transparent">Profile Anggota</a>
                     @else
                         {{-- Jika belum login (Guest) --}}
-                        <a href="{{ route('admin.login') }}" class="btn">Login</a>
-                        <a href="{{ route('join-us') }}" class="btn-transparent">Join Us</a>
+                        <a href="{{ route('admin.login') }}" class="login-btn">Masuk</a>
+                        <a href="{{ route('join-us') }}" class="btn-transparent">Gabung Member</a>
                     @endauth
                 @endauth
             </div>

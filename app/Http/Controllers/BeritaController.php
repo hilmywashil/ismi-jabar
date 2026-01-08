@@ -38,8 +38,6 @@ class BeritaController extends Controller
             ->take(5)
             ->get();
 
-        // Berita terbaru (5 terbaru dari SEMUA berita, tidak exclude apapun)
-        // Ini memastikan berita terbaru yang baru ditambahkan akan langsung muncul
         $beritaTerbaru = Berita::active()
             ->latestPublish()
             ->take(5)

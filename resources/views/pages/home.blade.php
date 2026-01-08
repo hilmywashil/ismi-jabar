@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'ASITA JABAR - Association Of The Indonesian Tours & Travel Agencies')
+@section('title', 'ISMI JABAR - Ikatan Saudagar Muslim Indonesia')
 
 @section('content')
 
@@ -10,7 +10,7 @@
                 <h1>Selamat datang di Website ISMI JABAR</h1>
                 <p>IKATAN SAUDAGAR MUSLIM SE-INDONESIA</p>
                 <div class="hero-buttons">
-                    <a href="{{ route('about') }}" class="btn">About Us</a>
+                    <a href="{{ route('about') }}" class="btn">Tentang Kami</a>
                 </div>
             </div>
         </div>
@@ -32,13 +32,14 @@
                     pertumbuhan ekonomi berbasis nilai-Islam. Melalui kolaborasi, inovasi, dan jaringan yang kuat, kami
                     mewujudkan iklim usaha yang berdaya saing — sekaligus beretika dan berkelanjutan.
                 </div>
+                <a href="{{ route('about') }}" class="btn">Tentang Kami</a>
             </div>
         </div>
         </div>
     </section>
 
     <section class="events">
-        <div class="event">
+        <div class="event" data-aos="fade-up">
             <span class="label">Kegiatan</span>
             <h2>Kegiatan Kami di ISMI JABAR</h2>
             <div class="events-content">
@@ -73,7 +74,7 @@
                                     <div class="events-overlay"></div>
 
                                     <div class="events-banner-content" style="left: 20px; bottom: 20px;">
-                                        <h2>{{ Str::limit($berita->judul, 60) }}</h2>
+                                        <h2>{{ Str::limit($berita->judul, 50) }}</h2>
                                         <p class="events-date">{{ $berita->tanggal_format }}</p>
                                         <span class="events-btn-more">Lihat Lebih Banyak</span>
                                     </div>
@@ -93,17 +94,23 @@
         </div>
     </section>
 
-    <section class="join-us">
-        <div class="join-us-container">
-            <span class="label">Produk</span>
-            <h1>Beberapa Produk ISMI untuk
-                mendukung Bisnis yang Anda Miliki</h1>
-            <p>Lihat dan optimalkan produk yang sudah disediakan</p>
+    <section class="home-highlight">
+        <div class="home-highlight-container">
+            <div class="highlight-head">
+                <span class="label">Produk</span>
+                <h1>Beberapa Produk ISMI untuk mendukung Bisnis yang Anda Miliki</h1>
+            </div>
+            <div class="highlight-text">
+                <p>Lihat dan optimalkan produk yang sudah disediakan</p>
+            </div>
+            <div class="highlight-button">
+                <a href="{{ route('about') }}" class="btn">Lihat Produk Kami</a>
+            </div>
         </div>
     </section>
 
     <section class="ekatalog-home">
-        <div class="ekatalog-homes" data-aos="fade-up   ">
+        <div class="ekatalog-homes" data-aos="fade-up">
             <span class="label">Anggota</span>
 
             <h2>Anggota ISMI JABAR</h2>
@@ -132,12 +139,14 @@
             </div>
         </div>
     </section>
-        <section class="beritas">
-            <span class="label">Anggota</span>
-            <h2>Anggota ISMI JABAR</h2>
+    <section class="beritas">
+        <div class="berita-heading" data-aos="fade-up">
+            <span class="label">Berita</span>
+            <h2>Berita Terkini dari ISMI JABAR</h2>
+        </div>
 
         <div class="berita-content" data-aos="fade-up">
-            
+
             @foreach($beritas as $b)
                 <a href="{{ route('berita-detail', $b->slug) }}">
                     <div class="buku-card">
@@ -145,18 +154,18 @@
                         <div class="container">
                             <p>{{ $b->tanggal_format }}</p>
                             <h4>{{ Str::limit($b->judul, limit: 80) }}</h4>
-                            <p>Read More</p>
+                            <p>Baca Selengkapnya</p>
                         </div>
                     </div>
                 </a>
             @endforeach
 
             <!-- {{-- Pagination --}}
-            @if($beritas->hasPages())
-                <div style="margin-top: 2rem;">
-                    {{ $beritas->links() }}
-                </div>
-            @endif -->
+                                @if($beritas->hasPages())
+                                    <div style="margin-top: 2rem;">
+                                        {{ $beritas->links() }}
+                                    </div>
+                                @endif -->
         </div>
     </section>
 

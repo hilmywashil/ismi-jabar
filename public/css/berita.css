@@ -1,10 +1,97 @@
+.berita {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1500px;
+}
+
+.berita-left {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px 100px 0;
+    gap: 25px;
+}
+
+.berita-item {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.berita-item-image {
+    width: 300px;
+    height: auto;
+}
+
+.berita-item-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.berita-item-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.berita-right {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 100px 0px;
+    gap: 25px;
+}
+
+.berita-right-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.berita-right-item-image img {
+    width: 100%;
+    max-width: 500px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.berita-right-item-content {
+    padding: 20px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
 .beritas {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 100px;
+    padding: 0 50px 100px 50px;
+    gap: 50px;
+}
+
+.berita-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.berita-heading>h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #015931;
+    text-align: center;
 }
 
 .berita-content {
@@ -24,7 +111,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0px 100px 100px 100px;
+    padding: 100px 50px;
 
 }
 
@@ -93,12 +180,64 @@
 
     }
 
+    .berita {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .berita-left {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 25px;
+    }
+
+    .berita-item {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .berita-item-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .berita-item-image img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+
+    .berita-item-content {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        gap: 20px;
+    }
+
+    .berita-right {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .berita-right h1 {
+        font-size: 25px;
+    }
+
     .berita-content {
         width: 100%;
         max-width: 1500px;
         display: flex;
         flex-direction: column;
         gap: 25px;
+    }
+
+    .berita-heading>h2 {
+        font-size: 25px;
     }
 
     .detail-beritas {

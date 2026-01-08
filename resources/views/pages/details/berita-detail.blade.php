@@ -24,40 +24,36 @@
 
 @section('content')
 
-    <section class="page-banners">
-        <div class="page-banner">
-            <h1>{{ $berita->judul }}</h1>
-            <p>{{ $berita->tanggal_format }}</p>
-        </div>
-    </section>
-
     <section class="detail-beritas">
 
         <div class="detail-berita">
             <div class="detail-berita-content">
+
                 <img src="{{ $berita->gambar_url }}" alt="{{ $berita->judul }}">
+                                <h1>{{ $berita->judul }}</h1>
+
                 <p style="white-space: pre-line;">{{ $berita->konten }}</p>
             </div>
 
             <div class="berita-detail-right">
                 <!-- {{-- Berita Populer --}}
-                <h1 class="berita-badge">Berita Populer</h1>
-                @forelse($beritaPopuler as $populer)
-                    <div class="berita-detail-right-item">
-                        <a href="{{ route('berita-detail', $populer->slug) }}" class="berita-detail-right-item-image">
-                            <img src="{{ $populer->gambar_url }}" alt="{{ $populer->judul }}">
-                        </a>
-                        <div class="berita-detail-right-item-content">
-                            <div>
-                                <h3>{{ $populer->judul }}</h3>
-                                <p class="berita-home-date">{{ $populer->tanggal_format }}</p>
-                                <p>{{ Str::limit(strip_tags($populer->konten), 100, '...') }}</p>
+                        <h1 class="berita-badge">Berita Populer</h1>
+                        @forelse($beritaPopuler as $populer)
+                            <div class="berita-detail-right-item">
+                                <a href="{{ route('berita-detail', $populer->slug) }}" class="berita-detail-right-item-image">
+                                    <img src="{{ $populer->gambar_url }}" alt="{{ $populer->judul }}">
+                                </a>
+                                <div class="berita-detail-right-item-content">
+                                    <div>
+                                        <h3>{{ $populer->judul }}</h3>
+                                        <p class="berita-home-date">{{ $populer->tanggal_format }}</p>
+                                        <p>{{ Str::limit(strip_tags($populer->konten), 100, '...') }}</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                @empty
-                    <p style="color: #9ca3af; font-size: 0.875rem; padding: 1rem 0;">Belum ada berita populer</p>
-                @endforelse -->
+                        @empty
+                            <p style="color: #9ca3af; font-size: 0.875rem; padding: 1rem 0;">Belum ada berita populer</p>
+                        @endforelse -->
 
                 <h1>Berita Lainnya</h1>
                 @forelse($beritaTerbaru as $terbaru)

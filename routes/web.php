@@ -172,7 +172,7 @@ Route::post('/profile-anggota/change-admin-password', [AnggotaController::class,
 // Other Routes
 Route::view('/informasi-kegiatan', 'pages.informasi-kegiatan')->name('informasi-kegiatan');
 Route::view('/detail-kegiatan', 'pages.details.kegiatan-detail')->name('detail-kegiatan');
-Route::view('/asita-profile', 'pages.about')->name('about');
+Route::view('/about', 'pages.about')->name('about');
 Route::view('/vision-mission', 'pages.visi-misi')->name('vision-mission');
 Route::view('/how-to-join', 'pages.how-to-join')->name('how-to-join');
 Route::view('/contact', 'pages.contact')->name('contact');
