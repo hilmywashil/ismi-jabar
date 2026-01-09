@@ -30,38 +30,27 @@
                             class="{{ Request::routeIs('vision-mission') ? 'active' : '' }}">
                             Visi Misi
                         </a>
-                        <a href="{{ route('vision-mission') }}"
-                            class="{{ Request::routeIs('vision-mission') ? 'active' : '' }}">
+                        <a href="{{ route('susunan-pengurus') }}"
+                            class="{{ Request::routeIs('susunan-pengurus') ? 'active' : '' }}">
+                            Pengurus
+                        </a>
+                        <a href="{{ route('peranan-ismi') }}"
+                            class="{{ Request::routeIs('peranan-ismi') ? 'active' : '' }}">
                             Peranan ISMI
                         </a>
                     </div>
                 </div>
-                <a href="{{ route('berita') }}"
-                    class="nav-link {{ Request::routeIs('berita') ? 'active' : '' }}">
+                <a href="{{ route('berita') }}" class="nav-link {{ Request::routeIs('berita') ? 'active' : '' }}">
                     Berita
                 </a>
-                <div class="dropdown">
-                    <a href="javascript:void(0)"
-                        class="nav-link dropdown-toggle {{ Request::routeIs('e-katalog', 'active-member') ? 'active' : '' }}">
-                        Membership <i class="fa fa-caret-down"></i>
-                    </a>
-
-                    <div class="dropdown-menu">
-                        <a href="{{ route('e-katalog') }}" class="{{ Request::routeIs('e-katalog') ? 'active' : '' }}">
-                            Showcase    
-                        </a>
-                        <a href="{{ route('active-member') }}"
-                            class="{{ Request::routeIs('active-member') ? 'active' : '' }}">
-                            Active Member
-                        </a>
-                        <a href="{{ route('vision-mission') }}"
-                            class="{{ Request::routeIs('vision-mission') ? 'active' : '' }}">
-                            Company Listing 
-                        </a>
-                    </div>
-                </div> <a href="{{ route('berita') }}"
-                    class="nav-link {{ Request::routeIs('berita') ? 'active' : '' }}">
-                    Article
+                <a href="{{ route('berita') }}" class="nav-link {{ Request::routeIs('berita') ? 'active' : '' }}">
+                    Kegiatan
+                </a>
+                <a href="{{ route('e-katalog') }}" class="nav-link {{ Request::routeIs('e-katalog') ? 'active' : '' }}">
+                    Anggota
+                </a>
+                <a href="{{ route('produk-ismi') }}" class="nav-link {{ Request::routeIs('produk-ismi') ? 'active' : '' }}">
+                    Produk
                 </a>
                 <a href="{{ route('contact') }}" class="nav-link {{ Request::routeIs('contact') ? 'active' : '' }}">
                     Contact

@@ -20,7 +20,7 @@ class HomeController extends Controller
             ->take(10)
             ->get();
 
-        // Hitung total katalog aktif
+        // Hitung total katalog aktif   
         $totalKatalog = Katalog::where('is_active', true)->count();
 
         // Ambil data misi yang aktif dan diurutkan

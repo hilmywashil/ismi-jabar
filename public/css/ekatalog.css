@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 25px 100px 100px 100px;
+    padding: 25px 50px 100px 50px;
 }
 
 .e-katalog-content {
@@ -55,7 +55,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px 100px 25px 100px;
+    padding: 0px 50px 25px 50px;
 }
 
 .search-katalog {
@@ -190,7 +190,7 @@
     }
 
     .search-katalogs {
-        padding: 50px 20px 0px 20px;
+        padding: 0px 20px 0px 20px;
     }
 
     .e-katalog-content {

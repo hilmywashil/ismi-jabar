@@ -10,18 +10,16 @@
     <link rel="stylesheet" href="{{ asset('css/header-footer.css') }}">
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <link rel="stylesheet" href="{{ asset('css/ekatalog.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/organisasi.css') }}">
     <link rel="stylesheet" href="{{ asset('css/berita.css') }}">
     <link rel="stylesheet" href="{{ asset('css/jadi-anggota.css') }}">
     <link rel="stylesheet" href="{{ asset('css/buku-informasi.css') }}">
     <link rel="stylesheet" href="{{ asset('css/info-kegiatan.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/strategic-plan.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/about.css') }}">
     <link rel="stylesheet" href="{{ asset('css/visi-misi.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/howtojoin.css') }}">
     <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
     <link rel="stylesheet" href="{{ asset('css/active-member.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/outline.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/sejarah.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/peranan.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pengurus.css') }}">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <link rel="stylesheet"

@@ -19,6 +19,8 @@ use App\Http\Controllers\AnggotaAuthController;
 use App\Http\Controllers\BukuAnggotaController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\UmkmController;
+use App\Http\Controllers\ProductController;
+
 
 // =====================================================
 // ADMIN ROUTES
@@ -129,8 +131,8 @@ Route::get('/e-katalog', [KatalogController::class, 'index'])->name('e-katalog')
 Route::get('/e-katalog/{katalog}', [KatalogController::class, 'show'])->name('e-katalog.detail');
 
 // Berita Public Routes
-Route::get('/berita', [BeritaController::class, 'index'])->name('berita');
-Route::get('/berita/{slug}', [BeritaController::class, 'show'])->name('berita-detail');
+Route::get('/news', [BeritaController::class, 'index'])->name('berita');
+Route::get('/news/{slug}', [BeritaController::class, 'show'])->name('berita-detail');
 
 // Other Public Pages
 Route::view('/organisasi', 'pages.organisasi')->name('organisasi');
@@ -172,14 +174,17 @@ Route::post('/profile-anggota/change-admin-password', [AnggotaController::class,
 // Other Routes
 Route::view('/informasi-kegiatan', 'pages.informasi-kegiatan')->name('informasi-kegiatan');
 Route::view('/detail-kegiatan', 'pages.details.kegiatan-detail')->name('detail-kegiatan');
-Route::view('/about', 'pages.about')->name('about');
+Route::view('/history', 'pages.sejarah')->name('about');
 Route::view('/vision-mission', 'pages.visi-misi')->name('vision-mission');
+Route::view('/peranan-ismi', 'pages.peranan-ismi')->name('peranan-ismi');
 Route::view('/how-to-join', 'pages.how-to-join')->name('how-to-join');
 Route::view('/contact', 'pages.contact')->name('contact');
 Route::view('/join-us', 'pages.join-us')->name('join-us');
+Route::view('/susunan-pengurus', 'pages.susunan-pengurus')->name('susunan-pengurus');
 
 Route::get('/active-member-asita', [KatalogController::class, 'letter'])->name('active-member');
 Route::get('/outline-of-asita', [OutlineController::class, 'index'])->name('outline');
+Route::get('/produk-ismi', [ProductController::class, 'index'])->name('produk-ismi');
 
 // Buku Anggota Routes
 Route::get('/buku-informasi-anggota', [BukuAnggotaController::class, 'index'])->name('buku-anggota');

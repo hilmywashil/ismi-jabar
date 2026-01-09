@@ -353,7 +353,7 @@
 
 @media (max-width: 1024px) {
     .events {
-        padding: 50px;
+        padding: 50px 20px;
         justify-content: center;
     }
 

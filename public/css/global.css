@@ -289,46 +289,15 @@ body {
     padding: 100px 50px 100px 50px;
 }
 
-.page-banner-2 {
-    width: 100%;
-    max-width: 1500px;
-    color: #04293B;
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-    justify-content: space-between;
-}
-
 .page-banner h1 {
-    font-size: 35px;
+    font-size: 40px;
     margin-bottom: 15px;
     font-weight: 700;
     color: #015931;
 }
 
-.page-banner-2 h1 {
-    font-size: 40px;
-    margin-bottom: 15px;
-}
-
 .page-banner p {
     font-size: 20px;
-}
-
-.page-banner-2 p {
-    font-size: 20px;
-}
-
-.back-button {
-    font-size: 30px;
-    text-decoration: none;
-    color: #04293B;
-    transition: transform 0.3s;
-    margin-bottom: 20px;
-}
-
-.back-button:hover {
-    transform: translateX(-10px);
 }
 
 @media (max-width: 1024px) {
@@ -341,23 +310,10 @@ body {
     }
 
     .page-banner h1 {
-        font-size: 20px;
-    }
-
-    .page-banner p {
-        font-size: 16px;
-    }
-
-    .page-banner-2 {
-        flex-direction: column-reverse;
-        gap: 50px;
-    }
-
-    .page-banner-2 h1 {
         font-size: 30px;
     }
 
-    .page-banner-2 p {
+    .page-banner p {
         font-size: 16px;
     }
 

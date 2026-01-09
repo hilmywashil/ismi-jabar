@@ -1,11 +1,11 @@
-.visi-misi-wrapper {
+.sejarah-wrapper {
     padding: 0 50px 100px 50px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.visi-misi {
+.sejarah {
     width: 100%;
     max-width: 1500px;
     display: flex;
@@ -14,41 +14,33 @@
     gap: 50px;
 }
 
-.visi-misi-content {
+.sejarah-content {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     gap: 25px;
 }
 
-.visi-misi-content h1 {
+.sejarah-content h1 {
     font-size: 25px;
     color: #015931;
 }
 
-.visi-misi-image img {
+.sejarah-image img {
     width: 100%;
     max-width: 800px;
 }
 
-.numeric-list {
-    list-style-type: decimal;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    padding-left: 20px;
-}
-
 @media (max-width: 1024px) {
-    .visi-misi-wrapper {
+    .sejarah-wrapper {
         padding: 0 20px 50px 20px;
     }
 
-    .visi-misi {
+    .sejarah {
         max-width: 100%;
     }
 
-    .visi-misi-image img {
+    .sejarah-image img {
         width: 100%;
     }
 

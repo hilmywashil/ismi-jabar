@@ -7,6 +7,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 nav {
@@ -51,7 +52,7 @@ nav {
     display: none;
     font-size: 28px;
     cursor: pointer;
-    color: #2A348D;
+    color: #015931;
 }
 
 .buttons {
@@ -99,11 +100,11 @@ nav {
 
 .dropdown-menu a:hover {
     background: #f2f2f2;
-    color: #2A348D;
+    color: #015931;
 }
 
 .dropdown-menu a.active {
-    color: #2A348D;
+    color: #015931;
     font-weight: 600;
 }
 
@@ -124,7 +125,7 @@ nav {
     }
 
     .logo1 {
-        width: 80px;
+        width: 100px;
     }
 
     .logo2 {
@@ -288,6 +289,7 @@ footer {
     justify-content: center;
     margin-right: 15px;
 }
+
 .contact-social-icons {
     font-size: 25px;
     color: #2A348D;

@@ -4,10 +4,11 @@
 
 @section('content')
 
-    <section class="hero-abouts">
-        <div class="hero-about" data-aos="fade-up">
-            <h1>Showcase</h1>
-            <p>Catalog of ASITA West Java Members</p>
+    <section class="page-banners">
+        <div class="page-banner">
+            <span class="label">Katalog</span>
+            <h1>Anggota ISMI</h1>
+            <p>Katalog Anggota ISMI</p>
         </div>
     </section>
 

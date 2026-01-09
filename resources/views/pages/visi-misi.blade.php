@@ -1,62 +1,40 @@
-@extends('layouts.app')
+@extends ('layouts.app')
 
-@section('title', 'About - ASITA JABAR')
+@section('title', 'Visi & Misi - Ikatan Saudagar Muslim Indonesia Jawa Barat')
 
 @section('content')
-
-    <section class="hero-visi-misis">
-        <div class="hero-visi-misi" data-aos="fade-up">
-            <h1>Vision & Mission</h1>
-            <p>Association Of The Indonesian
-                Tours & Travel Agencies</p>
+    <section class="page-banners">
+        <div class="page-banner">
+            <span class="label">Tentang</span>
+            <h1>Visi & Misi</h1>
+            <p>Visi dan Misi ISMI</p>
         </div>
     </section>
-    <section class="info-visi-misis">
-        <div class="info-visi-misi" data-aos="fade-up">
-            <div class="info-visi-misi-text">
-                <div class="info-visi-misi-heading">
-                    <img src="{{ asset('images/icons/binocular.png') }}" alt="">
-                    <h2>Vision</h2>
-                </div>
-                <p>Increasing the role of members as one of the main players of national tourism, producing foreign exchange
-                    and increasing revenue as well as developing the capacity of global competitive enterprises. Improving
-                    the image of Indonesian Tourism by providing satisfaction, sense of security, the certainty of
-                    protection and guarantee to the interests of service users and interested parties without sacrificing
-                    the interests of fellow members.
-                    <br>
-                    Enhance the role of members by undertaking efforts to advance
-                    capabilities that include professional, technical and financial capabilities so as to achieve
-                    international standards.
+    <section class="visi-misi-wrapper">
+        <div class="visi-misi">
+            <div class="visi-misi-content">
+                <h1>Visi</h1>
+                <p>
+                    Menjadi wadah persatuan Saudagar Muslim menuju kesuksesan dalam berbisnis dan mencapai kesejahteraan
+                    bersama.
                 </p>
-            </div>
-            <div class="info-visi-misi-image">
-                <img src="{{ asset('images/portugal.jpg') }}" alt="">
-            </div>
-
-        </div>
-    </section>
-    <section class="info-visi-misis-2">
-        <div class="info-visi-misi" data-aos="fade-up">
-            <div class="info-visi-misi-image">
-                <img src="{{ asset('images/gunung.jpg') }}" alt="">
-            </div>
-            <div class="info-visi-misi-text">
-                <div class="info-visi-misi-heading">
-                    <img src="{{ asset('images/icons/mission.png') }}" alt="">
-                    <h2>Mission</h2>
-                </div>
-                <p>Increasing the role of members as one of the main players of national tourism, producing foreign exchange
-                    and increasing revenue as well as developing the capacity of global competitive enterprises. Improving
-                    the image of Indonesian Tourism by providing satisfaction, sense of security, the certainty of
-                    protection and guarantee to the interests of service users and interested parties without sacrificing
-                    the interests of fellow members.
-                    <br>
-                    Enhance the role of members by undertaking efforts to advance
-                    capabilities that include professional, technical and financial capabilities so as to achieve
-                    international standards.
+                <h1>Misi</h1>
+                <ul class="numeric-list">
+                    <li> Mendorong penumbuhan, pengembangan dan kemandirian Saudagar Muslim.</li>
+                    <li> Meningkatkan sumber daya manusia, daya saing dan peran aktif dalam ekonomi skala nasional, regional
+                        dan
+                        internasional.
+                    </li>
+                    <li> Meningkatkan kerjasama dan jaringan usaha Saudagar Muslim se-Indonesia
+                    </li>
+                </ul>
+                <h1>Tagline ISMI</h1>
+                <p>
+                    Merangkai Persatuan, Kesuksesan dan Kesejahteraan.(Dengan modal sosial yang sangat potensial karena
+                    didirikan oleh NU, Muhammadiyah, ICMI dan MUI, seharusnya ISMI mampu merangkai persatuansaudagar muslim
+                    se-Indonesia.
                 </p>
             </div>
         </div>
     </section>
-
 @endsection

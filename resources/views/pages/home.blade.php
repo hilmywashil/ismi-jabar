@@ -139,7 +139,7 @@
             </div>
         </div>
     </section>
-    <section class="beritas">
+    <section class="beritas-homes">
         <div class="berita-heading" data-aos="fade-up">
             <span class="label">Berita</span>
             <h2>Berita Terkini dari ISMI JABAR</h2>
