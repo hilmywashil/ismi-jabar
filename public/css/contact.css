@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 100px;
+    padding: 0 50px 100px 50px;
 }
 
 .contact-wrapper {
@@ -10,6 +10,7 @@
     max-width: 1500px;
     display: flex;
     flex-direction: row;
+    gap: 50px;
 }
 
 .getintouch {
@@ -24,10 +25,20 @@
     font-weight: 600;
 }
 
+.forms, .form-control, .btn-submit {
+    font-family: 'Poppins', sans-serif;
+}
+
+.forms {
+    width: 100%;
+}
+
 .contact {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 50px;
+    justify-content: start;
+    align-items: start;
 }
 
 .contact-child {
@@ -39,22 +50,74 @@
 }
 
 .contact-child i {
-    color: #2A348D;
+    width: 70px;
+    height: 70px;
+    background-color: #015931;
+    border-radius: 50%;
+    color: #ffffff;
     font-size: 30px;
-    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact-child h4 {
     font-size: 20px;
 }
 
-.maps {
+.contact-forms {
     width: 50%;
 }
 
-.map {
+.contact-form {
     display: flex;
-    justify-content: end;
+    justify-content: start;
+
+}
+
+.contact-forms .form-group {
+    margin-bottom: 20px;
+}
+
+.forms {
+    width: 100%;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btn-submit {
+    background-color: #015931;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-submit:hover {
+    background-color: #013d24;
+}
+
+.alert {
+    background-color: #d4edda; 
+    color: #155724;
+    padding: 15px;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.alert i {
+    margin-right: 10px;
 }
 
 @media (max-width: 1024px) {
@@ -78,13 +141,15 @@
         flex-direction: column;
     }
 
-    .maps {
+    .contact-forms {
         width: 100%;
     }
 
-    .map {
+    .contact-form {
         display: flex;
         justify-content: center;
     }
+
+
 
 }

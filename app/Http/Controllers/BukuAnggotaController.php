@@ -7,10 +7,6 @@ use Illuminate\Http\Request;
 
 class BukuAnggotaController extends Controller
 {
-    /**
-     * Display a listing of approved members.
-     * Menampilkan anggota terbaru yang sudah diapprove
-     */
     public function index(Request $request)
     {
         $query = Anggota::approved(); // Hanya tampilkan anggota yang sudah diapprove

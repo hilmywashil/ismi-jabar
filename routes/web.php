@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminKontakController;
+use App\Http\Controllers\KontakController;
 use App\Http\Controllers\OutlineController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminAuthController;
@@ -61,6 +63,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         // Organisasi CRUD (BPD only)
         Route::resource('organisasi', OrganisasiController::class);
+        Route::get('kontak', [AdminKontakController::class, 'index'])->name('kontak.index');
+        Route::delete('kontak/{id}', [AdminKontakController::class, 'deleteMessage'])->name('kontak.delete');
 
         // E-Katalog CRUD (BPD only)
         Route::resource('katalog', AdminKatalogController::class);
@@ -141,6 +145,8 @@ Route::view('/organisasi', 'pages.organisasi')->name('organisasi');
 Route::get('/umkm', [UmkmController::class, 'create'])->name('umkm');
 Route::post('/umkm', [UmkmController::class, 'store'])->name('umkm.store');
 
+Route::post('/contact/send', [KontakController::class, 'sendContact'])->name('contact.send');
+
 // Jadi Anggota
 Route::get('/jadi-anggota', function () {
     if (Auth::guard('anggota')->check()) {
@@ -184,7 +190,7 @@ Route::view('/susunan-pengurus', 'pages.susunan-pengurus')->name('susunan-pengur
 
 Route::get('/active-member-asita', [KatalogController::class, 'letter'])->name('active-member');
 Route::get('/outline-of-asita', [OutlineController::class, 'index'])->name('outline');
-Route::get('/produk-ismi', [ProductController::class, 'index'])->name('produk-ismi');
+Route::get('/products', [ProductController::class, 'index'])->name('produk-ismi');
 
 // Buku Anggota Routes
 Route::get('/buku-informasi-anggota', [BukuAnggotaController::class, 'index'])->name('buku-anggota');

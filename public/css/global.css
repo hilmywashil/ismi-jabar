@@ -5,6 +5,10 @@ html {
     scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 .label {
     font-size: 15px;
     color: #ffffff;
@@ -143,6 +147,7 @@ html {
     cursor: pointer;
     display: none;
     transition: transform 0.3s;
+    z-index: 999;
 }
 
 #btnTop:hover {

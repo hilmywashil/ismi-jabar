@@ -217,12 +217,12 @@ $activeMenu = 'berita';
             <label class="form-label">
                 Gambar Utama <span class="required">*</span>
             </label>
-            <input type="file" name="gambar" class="form-input" accept="image/jpeg,image/jpg,image/png" required
+            <input type="file" name="gambar" class="form-input" accept="image/jpeg,image/jpg,image/png,image/webp" required
                 onchange="previewImage(event)">
             @error('gambar')
             <div class="error-message">{{ $message }}</div>
             @enderror
-            <div class="form-help">Format: JPG, JPEG, PNG. Maksimal 2MB</div>
+            <div class="form-help">Format: JPG, JPEG, PNG, WEBP. Maksimal 2MB</div>
             <div class="image-preview" id="imagePreview">
                 <img src="" alt="Preview" id="previewImg">
             </div>
