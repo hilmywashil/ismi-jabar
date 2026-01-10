@@ -266,6 +266,20 @@ $activeMenu = 'berita';
         </div>
 
         <div class="form-group">
+            <label class="form-label">
+                Kategori Berita <span class="required">*</span>
+            </label>
+            <select name="category" class="form-input" required>
+                <option value="">Pilih Kategori</option>
+                <option value="berita" {{ old('category', $berita->category) == 'berita' ? 'selected' : '' }}>Berita</option>
+                <option value="kegiatan" {{ old('category', $berita->category) == 'kegiatan' ? 'selected' : '' }}>Kegiatan</option>
+            </select>
+            @error('category')
+            <div class="error-message">{{ $message }}</div>
+            @enderror
+        </div>
+
+        <div class="form-group">
             <label class="form-label">Pengaturan Berita</label>
 
             <div class="checkbox-group">

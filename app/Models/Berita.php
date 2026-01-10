@@ -20,6 +20,7 @@ class Berita extends Model
         'is_active',
         'views',
         'tanggal_publish',
+        'category',
     ];
 
     protected $casts = [

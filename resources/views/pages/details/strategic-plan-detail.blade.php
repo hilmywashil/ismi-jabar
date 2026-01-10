@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $plan->title . ' - ASITA JABAR')
+@section('title', $plan->title . ' - ISMI JABAR')
 
 @section('content')
 
@@ -14,7 +14,7 @@
     <div class="strategic-detail-container">
         <div class="strategic-detail-header">
             <h1>{{ $plan->title }}</h1>
-            <p class="subtitle">Strategic Plan ASITA Jawa Barat</p>
+            <p class="subtitle">Strategic Plan ISMI Jawa Barat</p>
         </div>
 
         <!-- Section Cards (dari details array) -->

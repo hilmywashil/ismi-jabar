@@ -40,12 +40,14 @@ class HomeController extends Controller
 
         // Ambil berita untuk section "Informasi Kegiatan BPD" (5 berita terbaru)
         $kegiatanBerita = Berita::active()
+            ->where('category', 'kegiatan')
             ->latestPublish()
             ->take(5)
             ->get();
 
         // Ambil berita untuk section "Berita & Dokumentasi" (7 berita terbaru)
         $dokumentasiBerita = Berita::active()
+        
             ->latestPublish()
             ->take(7)
             ->get();
@@ -67,6 +69,7 @@ class HomeController extends Controller
         $search = $request->get('search');
 
         $beritas = Berita::active()
+            ->where('category', 'berita')
             ->latestPublish()
             ->when($search, function ($q) use ($search) {
                 $q->where(function ($query) use ($search) {

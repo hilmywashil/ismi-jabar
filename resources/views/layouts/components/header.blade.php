@@ -43,7 +43,7 @@
                 <a href="{{ route('berita') }}" class="nav-link {{ Request::routeIs('berita') ? 'active' : '' }}">
                     Berita
                 </a>
-                <a href="{{ route('berita') }}" class="nav-link {{ Request::routeIs('berita') ? 'active' : '' }}">
+                <a href="{{ route('kegiatan') }}" class="nav-link {{ Request::routeIs('kegiatan') ? 'active' : '' }}">
                     Kegiatan
                 </a>
                 <a href="{{ route('e-katalog') }}" class="nav-link {{ Request::routeIs('e-katalog') ? 'active' : '' }}">

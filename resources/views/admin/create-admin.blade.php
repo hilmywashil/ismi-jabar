@@ -352,7 +352,7 @@
         <span class="breadcrumb-current">Tambah Admin</span>
     </div>
     <h1 class="page-title">Tambah Admin Baru</h1>
-    <p class="page-desc">Lengkapi formulir di bawah untuk menambahkan administrator baru ke sistem ASITA Jawa Barat</p>
+    <p class="page-desc">Lengkapi formulir di bawah untuk menambahkan administrator baru ke sistem ISMI Jawa Barat</p>
 </div>
 
 <form action="{{ route('admin.store-admin') }}" method="POST">
@@ -451,8 +451,8 @@
                                     onchange="toggleDomisili()"
                                 >
                                 <label for="category-bpd" class="category-label">
-                                    <span class="category-name">BPD</span>
-                                    <span class="category-desc">Badan Pengurus Daerah</span>
+                                    <span class="category-name">Admin</span>
+                                    <span class="category-desc">Hanya Manajemen Konten</span>
                                 </label>
                             </div>
                             <div class="category-option">
@@ -465,10 +465,6 @@
                                     {{ old('category') == 'bpc' ? 'checked' : '' }}
                                     onchange="toggleDomisili()"
                                 >
-                                <label for="category-bpc" class="category-label">
-                                    <span class="category-name">BPC</span>
-                                    <span class="category-desc">Badan Pengurus Cabang</span>
-                                </label>
                             </div>
                         </div>
                         @error('category')

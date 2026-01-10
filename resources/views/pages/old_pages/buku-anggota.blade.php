@@ -1,6 +1,6 @@
 @extends ('layouts.app')
 
-@section('title', 'Buku Informasi Anggota - ASITA Jawa Barat')
+@section('title', 'Buku Informasi Anggota - ISMI Jawa Barat')
 
 @section('content')
     <section class="page-banner">

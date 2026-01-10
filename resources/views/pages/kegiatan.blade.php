@@ -7,8 +7,8 @@
     <section class="page-banners">
         <div class="page-banner">
             <span class="label">Kegiatan</span>
-            <h1>Berita Terkini</h1>
-            <p>Berita & Kegiatan seputar ISMI JABAR</p>
+            <h1>Kegiatan ISMI</h1>
+            <p>Kegiatan seputar ISMI JABAR</p>
         </div>
     </section>
 
@@ -17,7 +17,7 @@
             <div class="berita-left">
 
                 {{-- Berita Lainnya --}}
-                @forelse($beritas as $berita)
+                @forelse($kegiatan as $berita)
                     <div class="berita-item">
                         <a href="{{ route('berita-detail', $berita->slug) }}" class="berita-item-image">
                             <img src="{{ $berita->gambar_url }}" alt="{{ $berita->judul }}">
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                 @empty
-                    @if(!isset($beritaUtama) || !$beritaUtama)
+                    @if(!isset($kegiatan) || !$kegiatan)
                         <div style="text-align: center; padding: 3rem; color: #9ca3af;">
                             <p style="font-size: 1.125rem; margin-bottom: 0.5rem;">Belum Ada Berita</p>
                             <p>Berita akan segera ditampilkan di sini</p>
@@ -45,8 +45,8 @@
 
             <div class="berita-right">
                 {{-- Berita Populer --}}
-                <h1>Sering Dilihat</h1>
-                @forelse($beritaPopuler as $populer)
+                <h1>Kegiatan Lainnya</h1>
+                @forelse($kegiatanLainnya as $populer)
                     <div class="berita-right-item">
                         <a href="{{ route('berita-detail', $populer->slug) }}" class="berita-right-item-image">
                             <img src="{{ $populer->gambar_url }}" alt="{{ $populer->judul }}">

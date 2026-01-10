@@ -10,20 +10,25 @@ use Illuminate\Support\Str;
 
 class BeritaController extends Controller
 {
-    public function index()
-    {
-        $admin = auth()->guard('admin')->user();
-        
-        // ✅ Gunakan method canManageContent() biar include super_admin
-        if (!$admin->canManageContent()) {
-            abort(403, 'Anda tidak memiliki akses ke halaman ini.');
-        }
+public function index(Request $request)
+{
+    $admin = auth()->guard('admin')->user();
 
-        $beritas = Berita::latest()->paginate(10);
-        
-        return view('admin.berita.index', compact('admin', 'beritas'));
+    // Hak akses
+    if (!$admin->canManageContent()) {
+        abort(403, 'Anda tidak memiliki akses ke halaman ini.');
     }
 
+    $beritas = Berita::query()
+        ->when($request->category, function ($query) use ($request) {
+            $query->where('category', $request->category);
+        })
+        ->latest()
+        ->paginate(10)
+        ->withQueryString(); // ⬅️ penting untuk pagination + filter
+
+    return view('admin.berita.index', compact('admin', 'beritas'));
+}
     public function create()
     {
         $admin = auth()->guard('admin')->user();
@@ -50,6 +55,7 @@ class BeritaController extends Controller
             'is_populer' => 'boolean',
             'is_active' => 'boolean',
             'tanggal_publish' => 'required|date',
+            'category' => 'required|in:berita,kegiatan',
         ]);
 
         // Upload gambar
@@ -103,6 +109,7 @@ class BeritaController extends Controller
             'is_populer' => 'boolean',
             'is_active' => 'boolean',
             'tanggal_publish' => 'required|date',
+            'category' => 'required|in:berita,kegiatan',
         ]);
 
         // Upload gambar baru jika ada

@@ -1,11 +1,11 @@
 @extends ('layouts.app')
 
-@section('title', 'Active Member ASITA')
+@section('title', 'Active Member ISMI')
 
 @section('content')
     <section class="hero-abouts">
         <div class="hero-about" data-aos="fade-up">
-            <h1>Active Member ASITA</h1>
+            <h1>Active Member ISMI</h1>
             <p>List of Active Member</p>
         </div>
     </section>

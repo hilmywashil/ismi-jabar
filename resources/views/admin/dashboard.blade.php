@@ -15,25 +15,13 @@ $activeMenu = 'dashboard';
     }
 
     .welcome-card {
-        background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%);
+        background: linear-gradient(135deg, #0b7e4f 0%, #10b981 100%);
         padding: 2.5rem;
         border-radius: 12px;
         color: white;
         margin-bottom: 2rem;
         position: relative;
         overflow: hidden;
-    }
-
-    .welcome-card::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        right: -10%;
-        width: 300px;
-        height: 300px;
-        background: rgba(255, 215, 0, 0.1);
-        border-radius: 50%;
-        z-index: 0;
     }
 
     .welcome-content {
@@ -590,10 +578,7 @@ $activeMenu = 'dashboard';
         </div>
         <div class="welcome-text">
             <h1>Selamat Datang, {{ auth()->guard('admin')->user()->name }}</h1>
-            <p>Dashboard Admin ASITA Jawa Barat</p>
-            <span class="category-badge badge-{{ auth()->guard('admin')->user()->category }}">
-                {{ strtoupper(auth()->guard('admin')->user()->category) }}
-            </span>
+            <p>Dashboard Admin ISMI Jawa Barat</p>
         </div>
     </div>
 </div>
@@ -608,44 +593,10 @@ $activeMenu = 'dashboard';
 
 {{-- Statistics Cards dengan Grid Layout --}}
 <div class="stats-grid">
-    @if($admin->category === 'bpc')
-        {{-- Statistik untuk BPC --}}
-        <div class="stats-wrapper">
-            <div class="stat-card">
-                <div class="stat-label">Total Pendaftar</div>
-                <div class="stat-value">{{ $totalAnggota }}</div>
-                <div class="stat-meta">Wilayah {{ $admin->domisili }}</div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-label">Menunggu Verifikasi</div>
-                <div class="stat-value">{{ $pendingAnggota }}</div>
-                <div class="stat-meta">Perlu ditinjau</div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-label">Disetujui</div>
-                <div class="stat-value">{{ $approvedAnggota }}</div>
-                <div class="stat-meta">Anggota aktif</div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-label">Ditolak</div>
-                <div class="stat-value">{{ $rejectedAnggota }}</div>
-                <div class="stat-meta">Tidak memenuhi syarat</div>
-            </div>
-        </div>
-    @else
         {{-- Statistik untuk BPD --}}
         <div class="stats-wrapper">
             <div class="stat-card">
-                <div class="stat-label">Total Admin</div>
-                <div class="stat-value">{{ $totalAdmins }}</div>
-                <div class="stat-meta">BPC: {{ $adminsBPC }} | BPD: {{ $adminsBPD }}</div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-label">Total E-Katalog</div>
+                <div class="stat-label">Total Katalog Anggota</div>
                 <div class="stat-value">{{ $totalKatalog }}</div>
                 <div class="stat-meta">
                     @if($totalKatalogInactive > 0)
@@ -665,31 +616,14 @@ $activeMenu = 'dashboard';
             </div>
 
             <div class="stat-card">
-                <div class="stat-label">Struktur Organisasi</div>
-                <div class="stat-value">{{ $totalOrganisasi }}</div>
+                <div class="stat-label">Total Pos</div>
+                <div class="stat-value">{{ $totalPos }}</div>
                 <div class="stat-meta">
-                    Ketum: {{ $organisasiByKategori['ketua_umum'] }} |
-                    Waketum: {{ $organisasiByKategori['wakil_ketua_umum'] }}
+                    Berita: {{ $totalBerita }} | Kegiatan: {{ $totalKegiatan }}
                 </div>
             </div>
 
-            <div class="stat-card">
-                <div class="stat-label">Total Berita</div>
-                <div class="stat-value">{{ $totalBerita }}</div>
-                <div class="stat-meta">
-                    Aktif: {{ $totalBeritaAktif }} | Populer: {{ $totalBeritaPopuler }}
-                </div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-label">Total UMKM</div>
-                <div class="stat-value">{{ $totalUmkm }}</div>
-                <div class="stat-meta">
-                    Approved: {{ $totalUmkmApproved }} | Pending: {{ $totalUmkmPending }}
-                </div>
-            </div>
         </div>
-    @endif
 </div>
 
 
@@ -922,7 +856,7 @@ $activeMenu = 'dashboard';
                                 <span class="admin-badge" style="background: #f59e0b; color: white; margin-right: 0.5rem;">POPULER</span>
                                 @endif
                                 <span class="admin-badge badge-{{ $berita->is_active ? 'aktif' : 'pending' }}">
-                                    {{ $berita->is_active ? 'AKTIF' : 'TIDAK AKTIF' }}
+                                    {{ strtoupper($berita->category) }}
                                 </span>
                             </div>
                         </div>

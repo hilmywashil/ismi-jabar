@@ -5,12 +5,11 @@
     <div class="sidebar-header">
         <div class="brand">
             <div class="brand-logo">
-                <img src="{{ asset('images/ismi-logo.png') }}" alt="ASITA Logo" width="75" height="75"
-                    style="object-fit: contain;">
+                <img src="{{ asset('favicon.png') }}" alt="ISMI Logo">
             </div>
             <div class="brand-text" style="margin-left: 20px;">
-                <div class="brand-title">ASITA</div>
-                <div class="brand-subtitle">JAWA BARAT</div>
+                <div class="brand-title">ISMI JABAR</div>
+                <div class="brand-subtitle">Admin Panel</div>
             </div>
         </div>
     </div>
@@ -21,7 +20,7 @@
 
             {{-- Dashboard Dropdown --}}
             <div class="menu-dropdown">
-                <div class="menu-item has-dropdown {{ in_array($activeMenu, ['dashboard', 'info-admin', 'editor', 'anggota', 'list-anggota', 'kontak']) ? 'active' : '' }}"
+                <div class="menu-item has-dropdown {{ in_array($activeMenu, ['dashboard', 'info-admin', 'editor', 'anggota', 'list-anggota']) ? 'active' : '' }}"
                     onclick="toggleDropdown(this)">
                     <div style="display: flex; align-items: center; gap: 1rem; flex: 1;">
                         <svg viewBox="0 0 24 24">
@@ -202,7 +201,7 @@
                             <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
                             <polyline points="13 2 13 9 20 9" />
                         </svg>
-                        <span>Berita</span>
+                        <span>Berita & Kegiatan</span>
                     </div>
                     <svg class="dropdown-icon" viewBox="0 0 24 24">
                         <polyline points="6 9 12 15 18 9" />
@@ -222,36 +221,6 @@
                 </div>
             </div>
 
-            {{-- UMKM Dropdown --}}
-            <div class="menu-dropdown">
-                <div class="menu-item has-dropdown {{ $activeMenu === 'umkm' ? 'active' : '' }}"
-                    onclick="toggleDropdown(this)">
-                    <div style="display: flex; align-items: center; gap: 1rem; flex: 1;">
-                        <svg viewBox="0 0 24 24">
-                            <path
-                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-                            <line x1="12" y1="22.08" x2="12" y2="12" />
-                        </svg>
-                        <span>UMKM</span>
-                    </div>
-                    <svg class="dropdown-icon" viewBox="0 0 24 24">
-                        <polyline points="6 9 12 15 18 9" />
-                    </svg>
-                </div>
-                <div class="submenu {{ $activeMenu === 'umkm' ? 'active' : '' }}">
-                    @if($admin->canManageContent())
-                        <a href="{{ route('admin.umkm.index') }}"
-                            class="submenu-item {{ $activeMenu === 'umkm' ? 'active' : '' }}">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
-                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
-                            </svg>
-                            <span>Kelola Data</span>
-                        </a>
-                    @endif
-                </div>
-            </div>
             <div class="menu-dropdown">
                 <div class="menu-item has-dropdown {{ $activeMenu === 'kontak' ? 'active' : '' }}"
                     onclick="toggleDropdown(this)">

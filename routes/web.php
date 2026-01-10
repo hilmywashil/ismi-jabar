@@ -192,6 +192,8 @@ Route::get('/active-member-asita', [KatalogController::class, 'letter'])->name('
 Route::get('/outline-of-asita', [OutlineController::class, 'index'])->name('outline');
 Route::get('/products', [ProductController::class, 'index'])->name('produk-ismi');
 
+Route::get('/kegiatan', [BeritaController::class, 'kegiatan'])->name('kegiatan');
+
 // Buku Anggota Routes
 Route::get('/buku-informasi-anggota', [BukuAnggotaController::class, 'index'])->name('buku-anggota');
 Route::get('/buku-informasi-anggota/{anggota}', [BukuAnggotaController::class, 'show'])->name('detail-buku');

@@ -35,7 +35,7 @@
 .hero-1 {
     position: relative;
     max-width: 700px;
-    background: #0b5d3b;
+    background: #015931;
     padding: 70px;
     margin-left: 0px;
     border-radius: 0px 20px 20px 0px;
@@ -132,7 +132,7 @@
     top: 0;
     width: 25%;
     height: 100%;
-    background: #0b5d3b;
+    background: #015931;
     z-index: 1;
 }
 
@@ -177,7 +177,7 @@
 .about-heading h2 {
     font-size: 30px;
     font-weight: 700;
-    color: #0b5d3b;
+    color: #0a2540;
 }
 
 .about-text {

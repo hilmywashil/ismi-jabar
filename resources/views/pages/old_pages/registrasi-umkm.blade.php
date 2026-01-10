@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Registrasi UMKM - ASITA Jawa Barat')
+@section('title', 'Registrasi UMKM - ISMI Jawa Barat')
 
 {{-- Success/Error Messages --}}
 @if(session('success'))
@@ -46,9 +46,9 @@
 
 <section class="ja-page-banner">
     <h1>Registrasi UMKM</h1>
-    <p>ASITA coNEXTion - UMKM Kota Bogor</p>
+    <p>ISMI coNEXTion - UMKM Kota Bogor</p>
     <div class="rules">
-        <p>Formulir ini ditujukan untuk UMKM yang ingin bergabung dalam program ASITA coNEXTion. Mohon isi data dengan lengkap dan benar.</p>
+        <p>Formulir ini ditujukan untuk UMKM yang ingin bergabung dalam program ISMI coNEXTion. Mohon isi data dengan lengkap dan benar.</p>
         <h3>Syarat & Ketentuan</h3>
         <p>1. Memiliki usaha yang aktif beroperasi<br>2. Berdomisili di wilayah Kota Bogor<br>3. Bersedia mengikuti program pembinaan UMKM</p>
     </div>

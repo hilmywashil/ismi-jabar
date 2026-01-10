@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 
-@section('title', (Request::is('admin/login') ? 'Login Admin' : 'Login Anggota') . ' - ASITA Jawa Barat')
+@section('title', (Request::is('admin/login') ? 'Login Admin' : 'Login Anggota') . ' - ISMI Jawa Barat')
 
 @section('content')
 <style>

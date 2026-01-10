@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="{{ asset('favicon.png') }}" type="image/png">
-    <title>@yield('title', 'Dashboard Admin') - ASITA Jawa Barat</title>
+    <title>@yield('title', 'Dashboard Admin') - ISMI Jawa Barat</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
@@ -223,18 +223,6 @@
                     </div>
                     <div class="topbar-user-details">
                         <div class="topbar-user-name">{{ auth()->guard('admin')->user()->name ?? 'Admin' }}</div>
-                        <div class="topbar-user-role">
-                            @php
-                                $category = auth()->guard('admin')->user()->category;
-                                $roleDisplay = match($category) {
-                                    'super_admin' => 'Super Admin',
-                                    'bpd' => 'BPD',
-                                    'bpc' => 'BPC',
-                                    default => 'Admin'
-                                };
-                            @endphp
-                            {{ $roleDisplay }}
-                        </div>
                     </div>
                 </a>
 

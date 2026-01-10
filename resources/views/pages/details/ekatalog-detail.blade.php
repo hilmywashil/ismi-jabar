@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $katalog->company_name . ' - E-Katalog ASITA Jawa Barat')
+@section('title', $katalog->company_name . ' - E-Katalog ISMI Jawa Barat')
 
 @section('content')
 

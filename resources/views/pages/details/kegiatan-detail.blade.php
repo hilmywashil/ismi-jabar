@@ -1,6 +1,6 @@
 @extends ('layouts.app')
 
-@section('title', 'Judul - Kegiatan ASITA Jawa Barat')
+@section('title', 'Judul - Kegiatan ISMI Jawa Barat')
 
 @section('content')
 
@@ -83,7 +83,7 @@
                 </a>
                 <div class="berita-detail-right-item-content">
                     <div>
-                        <h3>Pengenalan ASITA dan Peran Ketua Umum</h3>
+                        <h3>Pengenalan ISMI dan Peran Ketua Umum</h3>
                         <p class="berita-home-date">Oktober 28, 2025</p>
 
                         <p>{{ Str::limit('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ullamcorper sapien bibendum, dapibus felis ac, blandit velit. Cras molestie nulla quis leo dignissim, vitae vulputate neque ultricies. Nunc rutrum justo in sem dignissim, non pulvinar leo accumsan. Nulla aliquet, eros ut feugiat consequat, velit leo viverra massa, ac pellentesque massa libero a magna. Cras sed nisl ac ante rutrum consequat ut et turpis. Phasellus nec felis auctor erat maximus laoreet. Maecenas pellentesque pellentesque justo ultrices semper. Suspendisse ut interdum elit. Vestibulum dignissim condimentum quam, sed mollis erat posuere sit amet. Aliquam ut eros vitae nulla convallis rhoncus. Proin quis urna ligula. Nullam nec arcu sit amet ipsum ullamcorper viverra eu sed lorem.

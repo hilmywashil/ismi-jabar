@@ -5,6 +5,10 @@
 
 @section('page-title', 'Kelola Pesan')
 
+@php
+$activeMenu = 'kontak';
+@endphp
+
 @push('styles')
     <style>
         .stats-card {

@@ -485,15 +485,6 @@
                     </label>
                 </div>
                 <h2 class="profile-name">{{ $admin->name }}</h2>
-                <span class="profile-category {{ $admin->category }}">
-                    @if($admin->isSuperAdmin())
-                        Super Admin
-                    @elseif($admin->isBPC())
-                        BPC
-                    @else
-                        BPD
-                    @endif
-                </span>
 
                 @if($admin->photo)
                 <div class="profile-photo-actions">
@@ -609,12 +600,6 @@
                     </div>
                     @endif
 
-                    <div class="form-group">
-                        <label class="form-label">Kategori</label>
-                        <input type="text" class="form-input" 
-                               value="{{ $admin->isSuperAdmin() ? 'Super Admin' : ($admin->isBPC() ? 'BPC (Badan Pengurus Cabang)' : 'BPD (Badan Pengurus Daerah)') }}" 
-                               disabled>
-                    </div>
 
                     <div class="form-actions">
                         <button type="submit" class="btn btn-primary">Simpan Perubahan</button>

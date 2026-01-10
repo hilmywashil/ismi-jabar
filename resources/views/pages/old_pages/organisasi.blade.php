@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Organisasi - ASITA Jawa Barat')
+@section('title', 'Organisasi - ISMI Jawa Barat')
 
 @section('content')
     <section class="page-banner">
         <h1>Struktur Organisasi</h1>
-        <p>Struktur Organisasi BPD ASITA Jawa Barat</p>
+        <p>Struktur Organisasi BPD ISMI Jawa Barat</p>
     </section>
     <section class="organisasi">
         {{-- Ketua Umum --}}
@@ -122,9 +122,9 @@
             {{-- Header dengan Logo --}}
             <div class="modal-header">
                 <div class="modal-header-content">
-                    <img src="{{ asset('images/hipmi-logo.png') }}" alt="ASITA Logo" class="modal-logo">
+                    <img src="{{ asset('images/hipmi-logo.png') }}" alt="ISMI Logo" class="modal-logo">
                     <div class="modal-header-text">
-                        <div class="modal-org-name">ASITA</div>
+                        <div class="modal-org-name">ISMI</div>
                         <div class="modal-org-region">JAWA BARAT</div>
                     </div>
                 </div>

@@ -13,8 +13,8 @@ class StrategicPlanSeeder extends Seeder
             'Platform Database Anggota',
             'Sistem Pelaporan Keuangan',
             'Rapat Pengurus dan Forum Bisnis',
-            'Sekretariat ASITA Jabar',
-            'Pengurus ASITA Jabar',
+            'Sekretariat ISMI Jabar',
+            'Pengurus ISMI Jabar',
             'Pengembangan BPC se-Jawa Barat',
             'Advokasi dan Konsultasi Hukum',
             'Jaringan dan Kerjasama'
@@ -32,7 +32,7 @@ class StrategicPlanSeeder extends Seeder
 
         $programLayanan = [
             'Kebijakan Publik',
-            'Silaturahmi Lintas Generasi ASITA Jabar'
+            'Silaturahmi Lintas Generasi ISMI Jabar'
         ];
 
         foreach ($programLayanan as $index => $title) {

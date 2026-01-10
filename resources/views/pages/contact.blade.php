@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Contact ASITA Jabar')
+@section('title', 'Contact ISMI Jabar')
 
 @section('content')
     <section class="page-banners">

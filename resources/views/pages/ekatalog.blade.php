@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'E-Katalog - ASITA Jawa Barat')
+@section('title', 'E-Katalog - ISMI Jawa Barat')
 
 @section('content')
 

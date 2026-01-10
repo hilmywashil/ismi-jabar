@@ -16,7 +16,7 @@ body {
 /* ============ SIDEBAR ============ */
 .sidebar {
     width: 280px;
-    background: #0a2540;
+    background: #015931;
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -33,18 +33,24 @@ body {
 .brand {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0;
 }
 
 .brand-logo {
     width: 50px;
     height: 50px;
-    background: #0a2540;
+    background: #ffffff;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+}
+
+.brand-logo img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
 }
 
 .brand-text {
@@ -103,7 +109,7 @@ body {
 }
 
 .menu-item.active {
-    background: rgba(255,215,0,0.1);
+    background: rgba(0, 0, 0, 0.1);
     color: white;
     border-left-color: #ffd700;
     font-weight: 600;
@@ -166,7 +172,6 @@ body {
 }
 
 .submenu-item.active {
-    background: rgba(255,215,0,0.1);
     color: white;
     border-left-color: #ffd700;
     font-weight: 600;

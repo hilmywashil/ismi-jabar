@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Profile Anggota - ASITA Jawa Barat')
+@section('title', 'Profile Anggota - ISMI Jawa Barat')
 
 @section('content')
 <style>
@@ -930,11 +930,11 @@
             <div class="tab-panel" id="tab-organisasi">
                 <div class="detail-grid">
                     <div class="field-group">
-                        <div class="field-label">SFC ASITA</div>
+                        <div class="field-label">SFC ISMI</div>
                         <div class="field-value">{{ $anggota->sfc_hipmi }}</div>
                     </div>
                     <div class="field-group">
-                        <div class="field-label">Referensi Anggota ASITA</div>
+                        <div class="field-label">Referensi Anggota ISMI</div>
                         <div class="field-value">{{ $anggota->referensi_hipmi }}</div>
                     </div>
                     <div class="field-group">

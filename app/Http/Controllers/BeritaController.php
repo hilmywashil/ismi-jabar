@@ -15,30 +15,33 @@ class BeritaController extends Controller
 
         if ($search) {
             $beritaUtamaQuery->where(function ($q) use ($search) {
-                $q->where('judul', 'like', '%' . $search . '%')
-                    ->orWhere('konten', 'like', '%' . $search . '%');
+                $q->where('judul', 'like', "%{$search}%")
+                    ->orWhere('konten', 'like', "%{$search}%");
             });
         }
 
         $beritaUtama = $beritaUtamaQuery->first();
 
         $beritas = Berita::active()
+            ->where('category', 'berita')
             ->latestPublish()
             ->when($search, function ($q) use ($search) {
                 $q->where(function ($query) use ($search) {
-                    $query->where('judul', 'like', '%' . $search . '%')
-                        ->orWhere('konten', 'like', '%' . $search . '%');
+                    $query->where('judul', 'like', "%{$search}%")
+                        ->orWhere('konten', 'like', "%{$search}%");
                 });
             })
             ->paginate(12);
 
         $beritaPopuler = Berita::active()
+            ->where('category', 'berita')
             ->populer()
             ->latestPublish()
             ->take(5)
             ->get();
 
         $beritaTerbaru = Berita::active()
+            ->where('category', 'berita')
             ->latestPublish()
             ->take(5)
             ->get();
@@ -50,6 +53,23 @@ class BeritaController extends Controller
             'beritaTerbaru',
             'search'
         ));
+    }
+
+    public function kegiatan()
+    {
+        $kegiatan = Berita::active()
+            ->where('category', 'kegiatan')
+            ->latestPublish()
+            ->paginate(12);
+
+        $kegiatanLainnya = Berita::active()
+            ->where('category', 'kegiatan')
+            ->latestPublish()
+            ->inRandomOrder()
+            ->take(5)
+            ->get();
+
+        return view('pages.kegiatan', compact('kegiatan', 'kegiatanLainnya'));
     }
 
     public function show($slug)

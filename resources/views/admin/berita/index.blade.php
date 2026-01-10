@@ -94,6 +94,8 @@ $activeMenu = 'berita';
         font-size: 0.75rem;
         font-weight: 600;
         text-transform: uppercase;
+        display: flex;
+        justify-content: center;
     }
 
     .badge-active {
@@ -212,8 +214,8 @@ $activeMenu = 'berita';
 
 <div class="content-header">
     <div>
-        <h3 style="font-size: 1.5rem; font-weight: 700; color: #0a2540; margin-bottom: 0.5rem;">Daftar Berita</h3>
-        <p style="color: #6b7280;">Kelola semua berita dan artikel ASITA Jawa Barat</p>
+        <h3 style="font-size: 1.5rem; font-weight: 700; color: #0a2540; margin-bottom: 0.5rem;">Daftar Berita & Kegiatan</h3>
+        <p style="color: #6b7280;">Kelola semua berita dan kegiatan</p>
     </div>
     <a href="{{ route('admin.berita.create') }}" class="add-btn">
         <svg viewBox="0 0 24 24" width="20" height="20" style="stroke: currentColor; fill: none; stroke-width: 2;">
@@ -224,6 +226,20 @@ $activeMenu = 'berita';
     </a>
 </div>
 
+<div style="margin-bottom: 1.5rem; display: flex; gap: 1rem; align-items: center;">
+    <form method="GET" action="{{ route('admin.berita.index') }}" style="display: flex; gap: 1rem; align-items: center;">
+        <select name="category" style="padding: 0.5rem 1rem; border: 1px solid #e5e7eb; border-radius: 6px; background: white;">
+            <option value="">Semua Kategori</option>
+            <option value="berita" {{ request('category') == 'berita' ? 'selected' : '' }}>Berita</option>
+            <option value="kegiatan" {{ request('category') == 'kegiatan' ? 'selected' : '' }}>Kegiatan</option>
+        </select>
+        <button type="submit" style="padding: 0.5rem 1.5rem; background: #0a2540; color: white; border: none; border-radius: 6px; cursor: pointer;">Filter</button>
+        @if(request('category'))
+            <a href="{{ route('admin.berita.index') }}" style="padding: 0.5rem 1.5rem; background: #f3f4f6; color: #374151; text-decoration: none; border-radius: 6px;">Reset</a>
+        @endif
+    </form>
+</div>
+
 <div class="table-container">
     @if($beritas->count() > 0)
     <table class="data-table">
@@ -231,7 +247,7 @@ $activeMenu = 'berita';
             <tr>
                 <th>Gambar</th>
                 <th>Judul & Tanggal</th>
-                <th>Status</th>
+                <th>Kategori</th>
                 <th>Views</th>
                 <th>Aksi</th>
             </tr>
@@ -248,8 +264,8 @@ $activeMenu = 'berita';
                 </td>
                 <td>
                     <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                        <span class="badge badge-{{ $berita->is_active ? 'active' : 'inactive' }}">
-                            {{ $berita->is_active ? 'Aktif' : 'Tidak Aktif' }}
+                        <span class="badge badge-active">
+                            {{ $berita->category }}
                         </span>
                         @if($berita->is_populer)
                         <span class="badge badge-populer">Populer</span>

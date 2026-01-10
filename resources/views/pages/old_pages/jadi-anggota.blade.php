@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Jadi Anggota - ASITA Jawa Barat')
+@section('title', 'Jadi Anggota - ISMI Jawa Barat')
 {{-- Success/Error Messages --}}
 @if(session('success'))
 <div class="alert alert-success">
@@ -48,9 +48,9 @@
 
 <section class="ja-page-banner">
     <h1>Jadi Anggota</h1>
-    <p>Formulir Pendaftaran Calon Anggota Baru ASITA Jawa Barat</p>
+    <p>Formulir Pendaftaran Calon Anggota Baru ISMI Jawa Barat</p>
     <div class="rules">
-        <p>Data yang masuk hanya akan dipergunakan untuk kepentingan proses rekrutmen anggota baru ASITA Jawa Barat.
+        <p>Data yang masuk hanya akan dipergunakan untuk kepentingan proses rekrutmen anggota baru ISMI Jawa Barat.
             Harap isi dengan benar dan sebaik-baiknya.</p>
         <h3>Syarat & Ketentuan Pendaftaran</h3>
         <p>1. Pengusaha Pria/Wanita berusia 17-40 Tahun<br>2. Usaha harus memiliki badan hukum berbentuk PT, CV, atau PT
@@ -415,12 +415,12 @@
                 <h2 class="form-title">Organisasi</h2>
 
                 <div class="form-group full-width">
-                    <label for="sfc_hipmi">SFC ASITA<span class="required">*</span></label>
+                    <label for="sfc_hipmi">SFC ISMI<span class="required">*</span></label>
                     <input type="text" id="sfc_hipmi" name="sfc_hipmi" class="form-control" value="{{ old('sfc_hipmi') }}" required>
                 </div>
 
                 <div class="form-group full-width">
-                    <label>Apakah anda referensi dari Anggota ASITA?<span class="required">*</span></label>
+                    <label>Apakah anda referensi dari Anggota ISMI?<span class="required">*</span></label>
                     <div class="radio-group-vertical">
                         <label class="radio-label">
                             <input type="radio" name="referensi_hipmi" value="Ya" {{ old('referensi_hipmi') == 'Ya' ? 'checked' : '' }} required>
@@ -434,7 +434,7 @@
                 </div>
 
                 <div class="form-group full-width">
-                    <label>Apakah Anda aktif di organisasi selain ASITA?<span class="required">*</span></label>
+                    <label>Apakah Anda aktif di organisasi selain ISMI?<span class="required">*</span></label>
                     <div class="radio-group-vertical">
                         <label class="radio-label">
                             <input type="radio" name="organisasi_lain" value="Ya" {{ old('organisasi_lain') == 'Ya' ? 'checked' : '' }} required>
@@ -466,7 +466,7 @@
                                 style="margin-top: 4px; width: 18px; height: 18px; cursor: pointer;">
                             <span style="font-size: 15px; line-height: 1.6;">
                                 Dengan ini saya menyatakan bahwa data yang saya isi adalah <strong>benar dan valid</strong>,
-                                serta bersedia mengikuti seluruh tahapan seleksi keanggotaan ASITA Jawa Barat.
+                                serta bersedia mengikuti seluruh tahapan seleksi keanggotaan ISMI Jawa Barat.
                                 <span class="required" style="color: #dc3545;">*</span>
                             </span>
                         </label>

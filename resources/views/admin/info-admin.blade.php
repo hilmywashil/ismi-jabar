@@ -520,7 +520,7 @@
 <div class="page-header">
     <div>
         <h1 class="page-title">Manajemen Admin</h1>
-        <p class="page-desc">Kelola seluruh akun administrator ASITA Jawa Barat</p>
+        <p class="page-desc">Kelola seluruh akun administrator ISMI Jawa Barat</p>
     </div>
     <a href="{{ route('admin.create-admin') }}" class="btn-primary">
         <svg viewBox="0 0 24 24">
@@ -555,7 +555,6 @@
                 <th>Admin</th>
                 <th>Username</th>
                 <th>Kategori</th>
-                <th>Domisili</th>
                 <th>Terdaftar</th>
                 <th>Aksi</th>
             </tr>
@@ -577,18 +576,13 @@
                     <span class="badge badge-{{ $adminItem->category }}">
                         @php
                             $categoryDisplay = match($adminItem->category) {
-                                'super_admin' => 'SA',
-                                'bpd' => 'BPD',
+                                'super_admin' => 'Super Admin',
+                                'bpd' => 'Admin',
                                 'bpc' => 'BPC',
                                 default => strtoupper($adminItem->category)
                             };
                         @endphp
                         {{ $categoryDisplay }}
-                    </span>
-                </td>
-                <td>
-                    <span class="domisili-text">
-                        {{ $adminItem->domisili ?? '-' }}
                     </span>
                 </td>
                 <td>{{ $adminItem->created_at->format('d M Y') }}</td>

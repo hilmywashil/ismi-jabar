@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Registrasi Berhasil - ASITA Jawa Barat')
+@section('title', 'Registrasi Berhasil - ISMI Jawa Barat')
 
 @section('content')
 <style>
@@ -333,7 +333,7 @@
         </div>
 
         <h1>Registrasi Berhasil!</h1>
-        <p>Selamat datang di ASITA Jawa Barat. Akun Anda telah berhasil dibuat dan sedang dalam proses verifikasi oleh admin.</p>
+        <p>Selamat datang di ISMI Jawa Barat. Akun Anda telah berhasil dibuat dan sedang dalam proses verifikasi oleh admin.</p>
 
         <div class="credentials-section">
             <h3>
@@ -427,7 +427,7 @@
 <div id="printContent">
     <div style="font-family: 'Montserrat', Arial, sans-serif; padding: 40px; max-width: 600px; margin: 0 auto;">
         <div style="text-align: center; margin-bottom: 30px;">
-            <h1 style="color: #0a2540; margin: 0 0 10px 0;">ASITA Jawa Barat</h1>
+            <h1 style="color: #0a2540; margin: 0 0 10px 0;">ISMI Jawa Barat</h1>
             <h2 style="color: #667eea; margin: 0; font-size: 1.5rem;">Kredensial Login Anggota</h2>
         </div>
         
@@ -505,7 +505,7 @@
         const element = document.getElementById('printContent');
         const opt = {
             margin: 10,
-            filename: 'ASITA_Kredensial_Login.pdf',
+            filename: 'ISMI_Kredensial_Login.pdf',
             image: { type: 'jpeg', quality: 0.98 },
             html2canvas: { scale: 2, useCORS: true },
             jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
@@ -526,7 +526,7 @@
         
         const content = `
 ═══════════════════════════════════════════════════════
-        ASITA JAWA BARAT - KREDENSIAL LOGIN
+        ISMI JAWA BARAT - KREDENSIAL LOGIN
 ═══════════════════════════════════════════════════════
 
 Email Login    : ${email}
@@ -549,7 +549,7 @@ Password       : ${password}
 📧 Email: info@hipmijawabarat.com
 
 ═══════════════════════════════════════════════════════
-        Terima kasih telah bergabung dengan ASITA!
+        Terima kasih telah bergabung dengan ISMI!
 ═══════════════════════════════════════════════════════
 `.trim();
 
@@ -557,7 +557,7 @@ Password       : ${password}
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'ASITA_Kredensial_Login.txt';
+        a.download = 'ISMI_Kredensial_Login.txt';
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);

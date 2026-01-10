@@ -1,6 +1,6 @@
 @extends ('layouts.app')
 
-@section('title', $berita->judul . ' - Berita ASITA Jawa Barat')
+@section('title', $berita->judul . ' - Berita ISMI Jawa Barat')
 
 @push('styles')
     <style>
@@ -55,7 +55,7 @@
                             <p style="color: #9ca3af; font-size: 0.875rem; padding: 1rem 0;">Belum ada berita populer</p>
                         @endforelse -->
 
-                <h1>Berita Lainnya</h1>
+                <h1>Berita & Kegiatan</h1>
                 @forelse($beritaTerbaru as $terbaru)
                     <div class="berita-detail-right-item">
                         <a href="{{ route('berita-detail', $terbaru->slug) }}" class="berita-detail-right-item-image">
