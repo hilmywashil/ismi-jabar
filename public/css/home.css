@@ -197,6 +197,11 @@
         height: 200px;
     }
 
+    .about-image img {
+        width: 100%;
+        height: auto;
+    }
+
     .abouts {
         width: 100%;
         margin-left: 0;
