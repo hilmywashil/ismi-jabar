@@ -587,9 +587,6 @@
                 <button class="tab-button" onclick="switchTab('perusahaan')">
                     Profil Perusahaan
                 </button>
-                <button class="tab-button" onclick="switchTab('organisasi')">
-                    Informasi Organisasi
-                </button>
             </div>
 
             <div class="tabs-content">
