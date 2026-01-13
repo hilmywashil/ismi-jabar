@@ -12,7 +12,16 @@ class AdminProductController extends Controller
     {
         $products = Product::get();
 
-        return view('admin.pages.produk-ismi', compact('products'));
+        return view('admin.product.index', compact('products'));
+    }
+
+    public function create()
+    {
+        return view('admin.product.create');
+    }
+    public function store(Request $request)
+    {
+
     }
 }
     
