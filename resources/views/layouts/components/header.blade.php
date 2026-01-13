@@ -66,7 +66,7 @@
                         @else
                             {{-- Jika belum login (Guest) --}}
                             <a href="{{ route('admin.login') }}" class="login-btn">Masuk</a>
-                            <a href="{{ route('join-us') }}" class="btn-transparent">Gabung</a>
+                            <a href="{{ route('jadi-anggota') }}" class="btn-transparent">Gabung</a>
                         @endauth
                     @endauth
                 </div>
@@ -83,7 +83,7 @@
                     @else
                         {{-- Jika belum login (Guest) --}}
                         <a href="{{ route('admin.login') }}" class="login-btn">Masuk</a>
-                        <a href="{{ url('https://ismi.cyberlabs.co.id') }}" class="btn-transparent">Gabung</a>
+                        <a href="{{ route('jadi-anggota') }}" class="btn-transparent">Gabung</a>
                     @endauth
                 @endauth
             </div>

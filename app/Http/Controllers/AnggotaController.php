@@ -22,139 +22,140 @@ class AnggotaController extends Controller
         return view('pages.details.buku-detail', compact('anggota'));
     }
     public function store(Request $request)
-    {
-        $validator = Validator::make($request->all(), [
+{
+    $validator = Validator::make($request->all(), [
+        // Data Pribadi
+        'nama_usaha' => 'required|string|max:255',
+        'jenis_kelamin' => 'required|in:Laki-laki,Perempuan',
+        'tempat_lahir' => 'required|string|max:255',
+        'tanggal_lahir' => 'required|date',
+        // 'agama' => 'required|string|max:255', // HAPUS BARIS INI
+        'nomor_telepon' => 'required|string|max:20',
+        'domisili' => 'required|string|max:255',
+        'alamat_domisili' => 'required|string',
+        'kode_pos' => 'required|string|max:10',
+        'email' => 'required|email|max:255|unique:anggota,email',
+        'nomor_ktp' => 'required|string|size:16',
+        'foto_ktp' => 'required|image|mimes:jpeg,jpg,png|max:2048',
+        'foto_diri' => 'required|image|mimes:jpeg,jpg,png|max:2048',
+        
+        // Profile Perusahaan
+        'nama_usaha_perusahaan' => 'required|string|max:255',
+        'legalitas_usaha' => 'required|in:PT,CV,PT Perorangan',
+        'jabatan_usaha' => 'required|string|max:255',
+        'alamat_kantor' => 'required|string',
+        'bidang_usaha' => 'required|string',
+        'brand_usaha' => 'required|string|max:255',
+        'jumlah_karyawan' => 'required|integer|min:0',
+        'nomor_ktp_perusahaan' => 'required|string|size:16',
+        'usia_perusahaan' => 'required|string',
+        'omset_perusahaan' => 'required|string',
+        'npwp_perusahaan' => 'required|string|max:255',
+        'no_nota_pendirian' => 'required|string|max:255',
+        'profile_perusahaan' => 'required|mimes:pdf|max:5120',
+        'logo_perusahaan' => 'required|image|mimes:jpeg,jpg,png|max:2048',
+        
+        // Organisasi - HAPUS SEMUA VALIDASI INI
+        // 'sfc_hipmi' => 'required|string|max:255',
+        // 'referensi_hipmi' => 'required|in:Ya,Tidak',
+        // 'organisasi_lain' => 'required|in:Ya,Tidak',
+        
+        'pernyataan' => 'required|accepted',
+    ], [
+        'required' => ':attribute wajib diisi.',
+        'email' => 'Format email tidak valid.',
+        'unique' => 'Email sudah terdaftar.',
+        'image' => ':attribute harus berupa gambar.',
+        'mimes' => ':attribute harus berformat :values.',
+        'max' => ':attribute maksimal :max KB.',
+        'size' => ':attribute harus :size karakter.',
+        'integer' => ':attribute harus berupa angka.',
+        'in' => ':attribute tidak valid.',
+        'accepted' => 'Anda harus menyetujui pernyataan ini.',
+    ]);
+
+    if ($validator->fails()) {
+        return redirect()->back()
+            ->withErrors($validator)
+            ->withInput();
+    }
+
+    try {
+        // Upload files
+        $fotoKtpPath = $request->file('foto_ktp')->store('anggota/ktp', 'public');
+        $fotoDiriPath = $request->file('foto_diri')->store('anggota/foto', 'public');
+        $profilePath = $request->file('profile_perusahaan')->store('anggota/profile', 'public');
+        $logoPath = $request->file('logo_perusahaan')->store('anggota/logo', 'public');
+
+        // Generate random password
+        $randomPassword = Str::random(12);
+
+        // Simpan data ke database
+        $anggota = Anggota::create([
             // Data Pribadi
-            'nama_usaha' => 'required|string|max:255',
-            'jenis_kelamin' => 'required|in:Laki-laki,Perempuan',
-            'tempat_lahir' => 'required|string|max:255',
-            'tanggal_lahir' => 'required|date',
-            'agama' => 'required|string|max:255',
-            'nomor_telepon' => 'required|string|max:20',
-            'domisili' => 'required|string|max:255',
-            'alamat_domisili' => 'required|string',
-            'kode_pos' => 'required|string|max:10',
-            'email' => 'required|email|max:255|unique:anggota,email',
-            'nomor_ktp' => 'required|string|size:16',
-            'foto_ktp' => 'required|image|mimes:jpeg,jpg,png|max:2048',
-            'foto_diri' => 'required|image|mimes:jpeg,jpg,png|max:2048',
+            'nama_usaha' => $request->nama_usaha,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'tempat_lahir' => $request->tempat_lahir,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            // 'agama' => $request->agama, // HAPUS BARIS INI
+            'nomor_telepon' => $request->nomor_telepon,
+            'domisili' => $request->domisili,
+            'alamat_domisili' => $request->alamat_domisili,
+            'kode_pos' => $request->kode_pos,
+            'email' => $request->email,
+            'password' => Hash::make($randomPassword),
+            'initial_password' => $randomPassword,
+            'nomor_ktp' => $request->nomor_ktp,
+            'foto_ktp' => $fotoKtpPath,
+            'foto_diri' => $fotoDiriPath,
             
             // Profile Perusahaan
-            'nama_usaha_perusahaan' => 'required|string|max:255',
-            'legalitas_usaha' => 'required|in:PT,CV,PT Perorangan',
-            'jabatan_usaha' => 'required|string|max:255',
-            'alamat_kantor' => 'required|string',
-            'bidang_usaha' => 'required|string',
-            'brand_usaha' => 'required|string|max:255',
-            'jumlah_karyawan' => 'required|integer|min:0',
-            'nomor_ktp_perusahaan' => 'required|string|size:16',
-            'usia_perusahaan' => 'required|string',
-            'omset_perusahaan' => 'required|string',
-            'npwp_perusahaan' => 'required|string|max:255',
-            'no_nota_pendirian' => 'required|string|max:255',
-            'profile_perusahaan' => 'required|mimes:pdf|max:5120',
-            'logo_perusahaan' => 'required|image|mimes:jpeg,jpg,png|max:2048',
+            'nama_usaha_perusahaan' => $request->nama_usaha_perusahaan,
+            'legalitas_usaha' => $request->legalitas_usaha,
+            'jabatan_usaha' => $request->jabatan_usaha,
+            'alamat_kantor' => $request->alamat_kantor,
+            'bidang_usaha' => $request->bidang_usaha,
+            'brand_usaha' => $request->brand_usaha,
+            'jumlah_karyawan' => $request->jumlah_karyawan,
+            'nomor_ktp_perusahaan' => $request->nomor_ktp_perusahaan,
+            'usia_perusahaan' => $request->usia_perusahaan,
+            'omset_perusahaan' => $request->omset_perusahaan,
+            'npwp_perusahaan' => $request->npwp_perusahaan,
+            'no_nota_pendirian' => $request->no_nota_pendirian,
+            'profile_perusahaan' => $profilePath,
+            'logo_perusahaan' => $logoPath,
             
-            // Organisasi
-            'sfc_hipmi' => 'required|string|max:255',
-            'referensi_hipmi' => 'required|in:Ya,Tidak',
-            'organisasi_lain' => 'required|in:Ya,Tidak',
-            'pernyataan' => 'required|accepted',
-        ], [
-            'required' => ':attribute wajib diisi.',
-            'email' => 'Format email tidak valid.',
-            'unique' => 'Email sudah terdaftar.',
-            'image' => ':attribute harus berupa gambar.',
-            'mimes' => ':attribute harus berformat :values.',
-            'max' => ':attribute maksimal :max KB.',
-            'size' => ':attribute harus :size karakter.',
-            'integer' => ':attribute harus berupa angka.',
-            'in' => ':attribute tidak valid.',
-            'accepted' => 'Anda harus menyetujui pernyataan ini.',
+            // Organisasi - HAPUS SEMUA BARIS INI
+            // 'sfc_hipmi' => $request->sfc_hipmi,
+            // 'referensi_hipmi' => $request->referensi_hipmi,
+            // 'organisasi_lain' => $request->organisasi_lain,
+            
+            // Status default pending
+            'status' => 'pending',
         ]);
 
-        if ($validator->fails()) {
-            return redirect()->back()
-                ->withErrors($validator)
-                ->withInput();
-        }
+        // Auto login anggota
+        Auth::guard('anggota')->login($anggota);
 
-        try {
-            // Upload files
-            $fotoKtpPath = $request->file('foto_ktp')->store('anggota/ktp', 'public');
-            $fotoDiriPath = $request->file('foto_diri')->store('anggota/foto', 'public');
-            $profilePath = $request->file('profile_perusahaan')->store('anggota/profile', 'public');
-            $logoPath = $request->file('logo_perusahaan')->store('anggota/logo', 'public');
+        // Simpan password dan email di session untuk halaman sukses
+        session()->flash('generated_password', $randomPassword);
+        session()->flash('user_email', $anggota->email);
 
-            // Generate random password
-            $randomPassword = Str::random(12);
+        // Redirect ke halaman sukses registrasi
+        return redirect()->route('registration-success');
 
-            // Simpan data ke database
-            $anggota = Anggota::create([
-                // Data Pribadi
-                'nama_usaha' => $request->nama_usaha,
-                'jenis_kelamin' => $request->jenis_kelamin,
-                'tempat_lahir' => $request->tempat_lahir,
-                'tanggal_lahir' => $request->tanggal_lahir,
-                'agama' => $request->agama,
-                'nomor_telepon' => $request->nomor_telepon,
-                'domisili' => $request->domisili,
-                'alamat_domisili' => $request->alamat_domisili,
-                'kode_pos' => $request->kode_pos,
-                'email' => $request->email,
-                'password' => Hash::make($randomPassword),
-                'initial_password' => $randomPassword,
-                'nomor_ktp' => $request->nomor_ktp,
-                'foto_ktp' => $fotoKtpPath,
-                'foto_diri' => $fotoDiriPath,
-                
-                // Profile Perusahaan
-                'nama_usaha_perusahaan' => $request->nama_usaha_perusahaan,
-                'legalitas_usaha' => $request->legalitas_usaha,
-                'jabatan_usaha' => $request->jabatan_usaha,
-                'alamat_kantor' => $request->alamat_kantor,
-                'bidang_usaha' => $request->bidang_usaha,
-                'brand_usaha' => $request->brand_usaha,
-                'jumlah_karyawan' => $request->jumlah_karyawan,
-                'nomor_ktp_perusahaan' => $request->nomor_ktp_perusahaan,
-                'usia_perusahaan' => $request->usia_perusahaan,
-                'omset_perusahaan' => $request->omset_perusahaan,
-                'npwp_perusahaan' => $request->npwp_perusahaan,
-                'no_nota_pendirian' => $request->no_nota_pendirian,
-                'profile_perusahaan' => $profilePath,
-                'logo_perusahaan' => $logoPath,
-                
-                // Organisasi
-                'sfc_hipmi' => $request->sfc_hipmi,
-                'referensi_hipmi' => $request->referensi_hipmi,
-                'organisasi_lain' => $request->organisasi_lain,
-                
-                // Status default pending
-                'status' => 'pending',
-            ]);
+    } catch (\Exception $e) {
+        // Hapus file yang sudah diupload jika ada error
+        if (isset($fotoKtpPath)) Storage::disk('public')->delete($fotoKtpPath);
+        if (isset($fotoDiriPath)) Storage::disk('public')->delete($fotoDiriPath);
+        if (isset($profilePath)) Storage::disk('public')->delete($profilePath);
+        if (isset($logoPath)) Storage::disk('public')->delete($logoPath);
 
-            // Auto login anggota
-            Auth::guard('anggota')->login($anggota);
-
-            // Simpan password dan email di session untuk halaman sukses
-            session()->flash('generated_password', $randomPassword);
-            session()->flash('user_email', $anggota->email);
-
-            // Redirect ke halaman sukses registrasi
-            return redirect()->route('registration-success');
-
-        } catch (\Exception $e) {
-            // Hapus file yang sudah diupload jika ada error
-            if (isset($fotoKtpPath)) Storage::disk('public')->delete($fotoKtpPath);
-            if (isset($fotoDiriPath)) Storage::disk('public')->delete($fotoDiriPath);
-            if (isset($profilePath)) Storage::disk('public')->delete($profilePath);
-            if (isset($logoPath)) Storage::disk('public')->delete($logoPath);
-
-            return redirect()->back()
-                ->with('error', 'Terjadi kesalahan: ' . $e->getMessage())
-                ->withInput();
-        }
+        return redirect()->back()
+            ->with('error', 'Terjadi kesalahan: ' . $e->getMessage())
+            ->withInput();
     }
+}
 
     // Profile anggota
    // Profile anggota
@@ -200,47 +201,46 @@ public function profile()
 
         return back()->with('success', 'Password berhasil diubah!');
     }
-    public function updateProfile(Request $request)
-    {
-        $anggota = Auth::guard('anggota')->user();
+public function updateProfile(Request $request)
+{
+    $anggota = Auth::guard('anggota')->user();
 
-        $validator = Validator::make($request->all(), [
-            'nama_usaha' => 'required|string|max:255',
-            'jenis_kelamin' => 'required|in:Laki-laki,Perempuan',
-            'tempat_lahir' => 'required|string|max:255',
-            'tanggal_lahir' => 'required|date',
-            'agama' => 'required|string|max:255',
-            'nomor_telepon' => 'required|string|max:20',
-            'domisili' => 'required|string|max:255',
-            'alamat_domisili' => 'required|string',
-            'kode_pos' => 'required|string|max:10',
-            'email' => 'required|email|max:255|unique:anggota,email,' . $anggota->id,
-            'foto_diri' => 'nullable|image|mimes:jpeg,jpg,png|max:2048',
-        ]);
+    $validator = Validator::make($request->all(), [
+        'nama_usaha' => 'required|string|max:255',
+        'jenis_kelamin' => 'required|in:Laki-laki,Perempuan',
+        'tempat_lahir' => 'required|string|max:255',
+        'tanggal_lahir' => 'required|date',
+        // 'agama' => 'required|string|max:255', // HAPUS BARIS INI
+        'nomor_telepon' => 'required|string|max:20',
+        'domisili' => 'required|string|max:255',
+        'alamat_domisili' => 'required|string',
+        'kode_pos' => 'required|string|max:10',
+        'email' => 'required|email|max:255|unique:anggota,email,' . $anggota->id,
+        'foto_diri' => 'nullable|image|mimes:jpeg,jpg,png|max:2048',
+    ]);
 
-        if ($validator->fails()) {
-            return back()->withErrors($validator)->withInput();
-        }
-
-        try {
-            $data = $request->except(['foto_diri']);
-
-            // Handle foto diri upload
-            if ($request->hasFile('foto_diri')) {
-                if ($anggota->foto_diri) {
-                    Storage::disk('public')->delete($anggota->foto_diri);
-                }
-                $data['foto_diri'] = $request->file('foto_diri')->store('anggota/foto', 'public');
-            }
-
-            $anggota->update($data);
-
-            return back()->with('success', 'Data pribadi berhasil diperbarui!');
-        } catch (\Exception $e) {
-            return back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
-        }
+    if ($validator->fails()) {
+        return back()->withErrors($validator)->withInput();
     }
 
+    try {
+        $data = $request->except(['foto_diri']);
+
+        // Handle foto diri upload
+        if ($request->hasFile('foto_diri')) {
+            if ($anggota->foto_diri) {
+                Storage::disk('public')->delete($anggota->foto_diri);
+            }
+            $data['foto_diri'] = $request->file('foto_diri')->store('anggota/foto', 'public');
+        }
+
+        $anggota->update($data);
+
+        return back()->with('success', 'Data pribadi berhasil diperbarui!');
+    } catch (\Exception $e) {
+        return back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+    }
+}
     // Update data perusahaan
     public function updateCompany(Request $request)
     {

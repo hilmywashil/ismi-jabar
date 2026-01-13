@@ -60,29 +60,24 @@
     </div>
 
     <!-- Stepper Progress -->
-    <div class="stepper-container">
-        <div class="stepper-wrapper">
-            <div class="stepper-item active" data-step="1">
-                <div class="stepper-circle"></div>
-                <div class="stepper-label">Data Pribadi</div>
-            </div>
-            <div class="stepper-line" data-line="1"></div>
-            <div class="stepper-item" data-step="2">
-                <div class="stepper-circle"></div>
-                <div class="stepper-label">Profile Perusahaan</div>
-            </div>
-            <div class="stepper-line" data-line="2"></div>
-            <div class="stepper-item" data-step="3">
-                <div class="stepper-circle"></div>
-                <div class="stepper-label">Organisasi</div>
-            </div>
-            <div class="stepper-line" data-line="3"></div>
-            <div class="stepper-item" data-step="4">
-                <div class="stepper-circle"></div>
-                <div class="stepper-label">Daftar</div>
-            </div>
+<div class="stepper-container">
+    <div class="stepper-wrapper">
+        <div class="stepper-item active" data-step="1">
+            <div class="stepper-circle"></div>
+            <div class="stepper-label">Data Pribadi</div>
+        </div>
+        <div class="stepper-line" data-line="1"></div>
+        <div class="stepper-item" data-step="2">
+            <div class="stepper-circle"></div>
+            <div class="stepper-label">Profile Perusahaan</div>
+        </div>
+        <div class="stepper-line" data-line="2"></div>
+        <div class="stepper-item" data-step="3">
+            <div class="stepper-circle"></div>
+            <div class="stepper-label">Daftar</div>
         </div>
     </div>
+</div>
 
     <!-- Form Multi-Step -->
     <div class="form-section">
@@ -161,18 +156,6 @@
                 </div>
 
                 <div class="form-row">
-                    <div class="form-group">
-                        <label for="agama">Agama<span class="required">*</span></label>
-                        <select id="agama" name="agama" class="form-control" required>
-                            <option value="">Pilih Agama</option>
-                            <option value="Islam" {{ old('agama') == 'Islam' ? 'selected' : '' }}>Islam</option>
-                            <option value="Kristen" {{ old('agama') == 'Kristen' ? 'selected' : '' }}>Kristen</option>
-                            <option value="Katolik" {{ old('agama') == 'Katolik' ? 'selected' : '' }}>Katolik</option>
-                            <option value="Hindu" {{ old('agama') == 'Hindu' ? 'selected' : '' }}>Hindu</option>
-                            <option value="Buddha" {{ old('agama') == 'Buddha' ? 'selected' : '' }}>Buddha</option>
-                            <option value="Konghucu" {{ old('agama') == 'Konghucu' ? 'selected' : '' }}>Konghucu</option>
-                        </select>
-                    </div>
                     <div class="form-group">
                         <label for="nomor_telepon">Nomor Telepon (yang terhubung dengan WhatsApp)<span class="required">*</span></label>
                         <input type="tel" id="nomor_telepon" name="nomor_telepon" class="form-control" value="{{ old('nomor_telepon') }}" placeholder="Contoh: 081234567890" required>
